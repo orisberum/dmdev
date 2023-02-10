@@ -14,4 +14,15 @@ public class Functions {
             System.out.println("Указанное число меньше 0 или больше 60");
         }
     }
+
+    public double calculate(double operand1, double operand2, char operation) {
+        return switch (operation) {
+            case '+' -> operand1 + operand2;
+            case '-' -> operand1 - operand2;
+            case '/' -> operand1 / operand2;
+            case '*' -> operand1 * operand2;
+            case '%' -> operand1 % operand2;
+            default -> throw new IllegalArgumentException("В качстве третьего параметра допустимы только следующие символы: ‘+’, ‘-’, ‘*’, ‘/’, ‘%’");
+        };
+    }
 }
