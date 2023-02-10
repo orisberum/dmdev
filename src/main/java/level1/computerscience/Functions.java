@@ -1,6 +1,8 @@
 package level1.computerscience;
 
 public class Functions {
+    public static final double HALF_MULTIPLIER = 0.5;
+
     public void minutesToQuarterPrint(int minutes) {
         if (minutes >= 0 && minutes < 15) {
             System.out.println("Число " + minutes + " попадает в первую четверть часа");
@@ -24,5 +26,17 @@ public class Functions {
             case '%' -> operand1 % operand2;
             default -> throw new IllegalArgumentException("В качстве третьего параметра допустимы только следующие символы: ‘+’, ‘-’, ‘*’, ‘/’, ‘%’");
         };
+    }
+
+    public void compareTriangle(double triangleAreaA, double triangleAreaB) {
+        switch (Double.compare(triangleAreaA, triangleAreaB)) {
+            case 1 -> System.out.println("1-й треугольник больше");
+            case -1 -> System.out.println("2-й треугольник больше");
+            case 0 -> System.out.println("Треугольники равны");
+        }
+    }
+
+    public double getTriangleArea(int sideA, int sideB) {
+        return HALF_MULTIPLIER * sideA * sideB;
     }
 }
