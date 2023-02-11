@@ -56,8 +56,8 @@ public class ArraysTasks {
         int[] intArray = charArrayToIntArray(charArray);
         int average = average(intArray);
 
-        for (int i = 0; i < charArray.length; i++) {
-            if (charArray[i] > average) {
+        for (char c : charArray) {
+            if (c > average) {
                 moreThenAverageCounter++;
             }
         }
@@ -71,5 +71,39 @@ public class ArraysTasks {
             }
         }
         System.out.println(Arrays.toString(moreThenAverageArray));
+    }
+
+    public int[][] arraySplitting(int[] sourceArray) {
+        int positiveCounter = 0;
+        int negativeCounter = 0;
+        int zeroCounter = 0;
+
+        for (int element : sourceArray) {
+            if (element > 0) {
+                positiveCounter++;
+            } else if (element < 0) {
+                negativeCounter++;
+            } else {
+                zeroCounter++;
+            }
+        }
+
+        int[] positiveArray = new int[positiveCounter];
+        int[] negativeArray = new int[negativeCounter];
+        int[] zeroArray = new int[zeroCounter];
+
+        for (int i = 0, j = 0, k = 0, z = 0; i < sourceArray.length; i++) {
+            if (sourceArray[i] > 0) {
+                positiveArray[j] = sourceArray[i];
+                j++;
+            } else if (sourceArray[i] < 0) {
+                negativeArray[k] = sourceArray[i];
+                k++;
+            } else {
+                zeroArray[z] = sourceArray[i];
+                z++;
+            }
+        }
+        return new int[][]{positiveArray, negativeArray, zeroArray};
     }
 }

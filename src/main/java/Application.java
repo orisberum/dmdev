@@ -21,5 +21,7 @@ public class Application {
         System.out.println(Arrays.toString(arraysTasks.excludeNegativeNumbers(testArray)));
 
         arraysTasks.getMoreThenAverage(charArray);
+
+        System.out.println(Arrays.deepToString(arraysTasks.arraySplitting(testArray)));
     }
 }
